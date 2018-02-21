@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" ng-app="todo">
+<head>
+
+	<title>Todo_List</title>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content=""/>
+
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jquery-ui.min.css">
+	<link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="js/libs/jquery.min.js"></script>
+	<script src="js/libs/jquery-ui.min.js"></script>
+	<script src="js/libs/jquery.ui.touch-punch.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="js/libs/angular-local-storage.min.js"></script>
+	<script src="js/libs/sortable.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/directives/angular.editInPlace.js"></script>
+	<script src="js/directives/angular.ngEnter.js"></script>
+
+</head>
+<body ng-controller="TodoCtrl" ng-init="init()">
+	<!-- The Common Navigation Navbar-->
+	<div class="navbar navbar-fixed-top navbg" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand white" href="#">Todo-List</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<div class="container-fluid">
+	<div class="container " ng-controller="TodoCtrl" id="playground" style="">
+		<div class="row">
+			<div class="col-xs-6 col-xs-offset-3">
+				<form name="testForm">
+		    <div class="row marbtm20">
+          <div class="pull-left ">
+            <input type="text" class="form-control addinputbox" ng-model="newTodo" placeholder="Add New Todo" name="myInput" ng-enter required/>
+				  </div>
+					<button class="btn btn-success addbtn marrgt20" ng-disabled="testForm.$invalid" type="button" ng-click="addTodo()">Add</button>
+					<div class="pull-right">
+            <button class="btn btn-warning" type="button" ng-click="deleteTodo()">Delete Selected</button>
+					</div>
+				</div>
+			</form>
+
+				<div class="row">
+					<div class="table-responsive">
+					  <table class="table table-striped" ng-repeat="todos in model track by $index" ng-model="todos.list" ng-show="$index === currentShow">
+					    <thead class="tablehead">
+					      <tr>
+					        <th class="font18 width8"><input type="checkbox" ng-model="selectAll" ng-click="checkAll()"/> </th>
+					        <th class="font18 width78">Name</th>
+					        <th class="font18 width14">Action</th>
+					      </tr>
+					    </thead>
+					    <tbody ng-repeat="todo in todos.list">
+					      <tr>
+					        <td><input class="" type="checkbox" ng-model="todo.isDone"></td>
+									{{todo}}
+					        <td><edit-in-place value="todo.taskName"></edit-in-place></td>
+					        <td class="aligncenter"><a href="#" class="delete" ng-click="deleteSingle(todo)">
+                    <span class="fa fa-trash-o"></span>
+									</a></td>
+					      </tr>
+					    </tbody>
+					  </table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+</div>
+</body>
+</html>

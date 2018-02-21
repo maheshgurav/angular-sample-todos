@@ -1,0 +1,107 @@
+#playground{
+	padding-top: 125px;
+}
+.navbg{
+	background:#333;padding:7px 0px;
+}
+.tablehead{
+	background: #cbdfe2;
+}
+.white{
+	color: #fff;
+}
+.debug{
+	width: 600px;
+	margin: 0 auto;
+	margin-top: 30px;
+}
+.aligncenter{
+	text-align: center;
+}
+.delete{
+  font-size: 22px;
+	color: #ff0000;
+}
+.todo-filter {
+	margin-bottom: 25px;
+}
+.width8{
+	width:8%;
+}
+.width78{
+	width:78%;
+}
+.width14{
+	width:14%;
+}
+.martop125{
+	margin-top: 125px;
+}
+.todo-filter>li>a{
+	padding: 8px 12px;
+	font-size: 12px;
+}
+
+#todoAdd {
+	margin-left: 40px;
+}
+
+.todoField{
+	padding-left: 5px;
+	font-size: 20px;
+}
+
+#newTodoField{
+	margin: 20px;
+	width: 75%;
+}
+
+#todoSubmit{
+	margin-top: -5px;
+}
+
+.todoTask{
+	margin-bottom: 20px;
+}
+
+.todoName{
+	font-size: 20px;
+	border-bottom: 1px lightgray solid;
+	padding-bottom:5px;
+}
+
+.edit-in-place span {
+  cursor: pointer;
+}
+
+.edit-in-place input {
+  display: none;
+}
+
+.edit-in-place.active span {
+  display: none;
+}
+
+.edit-in-place.active input {
+  display: inline-block;
+}
+
+.addinputbox{
+	  float: left;
+    width: 300px;
+    border-radius: 4px 0px 0px 4px;
+}
+.addbtn{
+	float: left;
+border-radius: 0px 4px 4px 0px;
+padding: 6px 20px;
+}
+.marrgt20{
+	margin-right: 20px;
+}
+.marbtm20{
+	margin-bottom: 20px;
+}
+.font18{
+	font-size: 18px;
+}
